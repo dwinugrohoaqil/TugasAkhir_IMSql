@@ -1,8 +1,5 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-# from kivy.uix.label import Label
-# from kivy.uix.floatlayout import FloatLayout
-# from kivy.graphics import Color, Rectangle
 import mysql.connector
 from mysql.connector import Error
 from kivy.clock import Clock
@@ -54,23 +51,18 @@ class SecondWindow(Screen,BoxLayout):
 
     def readComm(self,_):
         global db,data
-        # namatblsensor= self.ids.adcsensor.text
+
         
         db = mysql.connector.connect(
             host=host, user=user, password=password, database=database)
         cursor = db.cursor()
 
         try:
-            # ========================================================================================================
-            # ==================================================SQL 1-10 ======================================================
-            # ========================================================================================================
+
             # Query untuk tabel cwp1
             sql_1 = "SELECT Paper_Level FROM cwp1 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_1)
             results_1 = cursor.fetchall()
-            # for result in results_1:
-            #     results_1 = result[0]  # Mengambil nilai pertama dari row
-
             word_1 = ""
             for row in results_1:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -82,9 +74,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_2 = "SELECT Paper_Level FROM cwp2 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_2)
             results_2 = cursor.fetchall()
-            # for result in results_2:
-            #     results_2 = result[0]  # Mengambil nilai pertama dari row
-
             word_2 = ""
             for i in results_2:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -95,9 +84,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_3 = "SELECT Paper_Level FROM cwp3 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_3)
             results_3 = cursor.fetchall()
-            # for result in results_3:
-            #     results_3 = result[0]  # Mengambil nilai pertama dari row
-
             word_3 = ""
             for i in results_3:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -107,9 +93,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_4 = "SELECT Paper_Level FROM cwp4 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_4)
             results_4 = cursor.fetchall()
-            # for result in results_4:
-            #     results_4 = result[0]  # Mengambil nilai pertama dari row
-
             word_4 = ""
             for row in results_4:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -121,9 +104,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_5 = "SELECT Paper_Level FROM cwp5 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_5)
             results_5 = cursor.fetchall()
-            # for result in results_5:
-            #     results_5 = result[0]  # Mengambil nilai pertama dari row
-
             word_5 = ""
             for i in results_5:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -134,9 +114,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_6 = "SELECT Paper_Level FROM cwp6 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_6)
             results_6 = cursor.fetchall()
-            # for result in results_6:
-            #     results_6 = result[0]  # Mengambil nilai pertama dari row
-
             word_6 = ""
             for i in results_6:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -146,9 +123,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_7 = "SELECT Paper_Level FROM cwp7 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_7)
             results_7 = cursor.fetchall()
-            # for result in results_7:
-            #     results_7 = result[0]  # Mengambil nilai pertama dari row
-
             word_7 = ""
             for row in results_7:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -160,9 +134,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_8 = "SELECT Paper_Level FROM cwp8 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_8)
             results_8 = cursor.fetchall()
-            # for result in results_8:
-            #     results_8 = result[0]  # Mengambil nilai pertama dari row
-
             word_8 = ""
             for i in results_8:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -173,9 +144,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_9 = "SELECT Paper_Level FROM cwp9 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_9)
             results_9 = cursor.fetchall()
-            # for result in results_9:
-            #     results_9 = result[0]  # Mengambil nilai pertama dari row
-
             word_9 = ""
             for i in results_9:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -185,23 +153,15 @@ class SecondWindow(Screen,BoxLayout):
             sql_10 = "SELECT Paper_Level FROM cwp10 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_10)
             results_10 = cursor.fetchall()
-            # for result in results_10:
-            #     results_10 = result[0]  # Mengambil nilai pertama dari row
-
             word_10 = ""
             for row in results_10:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
                 word_10 = f"{word_10}\n{paper_level}"
             self.ids.hasil10.text = word_10
-            # ========================================================================================================
-            # ==================================================SQL 11-20 ======================================================
-            # ========================================================================================================
+
             sql_11 = "SELECT Paper_Level FROM cwp11 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_11)
             results_11 = cursor.fetchall()
-            # for result in results_11:
-            #     results_11 = result[0]  # Mengambil nilai pertama dari row
-
             word_11 = ""
             for row in results_11:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -213,9 +173,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_12 = "SELECT Paper_Level FROM cwp12 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_12)
             results_12 = cursor.fetchall()
-            # for result in results_12:
-            #     results_12 = result[0]  # Mengambil nilai pertama dari row
-
             word_12 = ""
             for i in results_12:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -226,9 +183,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_13 = "SELECT Paper_Level FROM cwp13 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_13)
             results_13 = cursor.fetchall()
-            # for result in results_13:
-            #     results_13 = result[0]  # Mengambil nilai pertama dari row
-
             word_13 = ""
             for i in results_13:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -238,9 +192,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_14 = "SELECT Paper_Level FROM cwp14 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_14)
             results_14 = cursor.fetchall()
-            # for result in results_14:
-            #     results_14 = result[0]  # Mengambil nilai pertama dari row
-
             word_14 = ""
             for row in results_14:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -252,9 +203,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_15 = "SELECT Paper_Level FROM cwp15 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_15)
             results_15 = cursor.fetchall()
-            # for result in results_15:
-            #     results_15 = result[0]  # Mengambil nilai pertama dari row
-
             word_15 = ""
             for i in results_15:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -265,9 +213,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_16 = "SELECT Paper_Level FROM cwp16 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_16)
             results_16 = cursor.fetchall()
-            # for result in results_16:
-            #     results_16 = result[0]  # Mengambil nilai pertama dari row
-
             word_16 = ""
             for i in results_16:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -277,9 +222,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_17 = "SELECT Paper_Level FROM cwp17 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_17)
             results_17 = cursor.fetchall()
-            # for result in results_17:
-            #     results_17 = result[0]  # Mengambil nilai pertama dari row
-
             word_17 = ""
             for row in results_17:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -291,9 +233,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_18 = "SELECT Paper_Level FROM cwp18 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_18)
             results_18 = cursor.fetchall()
-            # for result in results_18:
-            #     results_18 = result[0]  # Mengambil nilai pertama dari row
-
             word_18 = ""
             for i in results_18:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -304,9 +243,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_19 = "SELECT Paper_Level FROM cwp19 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_19)
             results_19 = cursor.fetchall()
-            # for result in results_19:
-            #     results_19 = result[0]  # Mengambil nilai pertama dari row
-
             word_19 = ""
             for i in results_19:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -316,9 +252,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_20 = "SELECT Paper_Level FROM cwp20 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_20)
             results_20 = cursor.fetchall()
-            # for result in results_20:
-            #     results_20 = result[0]  # Mengambil nilai pertama dari row
-
             word_20 = ""
             for row in results_20:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -326,16 +259,9 @@ class SecondWindow(Screen,BoxLayout):
             self.ids.hasil20.text = word_20
 
 
-            # ========================================================================================================
-            # ==================================================SQL 21-29 ======================================================
-            # ========================================================================================================
-
             sql_21 = "SELECT Paper_Level FROM cwp21 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_21)
             results_21 = cursor.fetchall()
-            # for result in results_21:
-            #     results_21 = result[0]  # Mengambil nilai pertama dari row
-
             word_21 = ""
             for row in results_21:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -347,9 +273,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_22 = "SELECT Paper_Level FROM cwp22 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_22)
             results_22 = cursor.fetchall()
-            # for result in results_22:
-            #     results_22 = result[0]  # Mengambil nilai pertama dari row
-
             word_22 = ""
             for i in results_22:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -360,9 +283,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_23 = "SELECT Paper_Level FROM cwp23 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_23)
             results_23 = cursor.fetchall()
-            # for result in results_23:
-            #     results_23 = result[0]  # Mengambil nilai pertama dari row
-
             word_23 = ""
             for i in results_23:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -372,9 +292,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_24 = "SELECT Paper_Level FROM cwp24 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_24)
             results_24 = cursor.fetchall()
-            # for result in results_24:
-            #     results_24 = result[0]  # Mengambil nilai pertama dari row
-
             word_24 = ""
             for row in results_24:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -382,13 +299,9 @@ class SecondWindow(Screen,BoxLayout):
             self.ids.hasil24.text = word_24
 
 
-            # Query untuk tabel cwp25
             sql_25 = "SELECT Paper_Level FROM cwp25 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_25)
             results_25 = cursor.fetchall()
-            # for result in results_25:
-            #     results_25 = result[0]  # Mengambil nilai pertama dari row
-
             word_25 = ""
             for i in results_25:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -399,9 +312,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_26 = "SELECT Paper_Level FROM cwp26 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_26)
             results_26 = cursor.fetchall()
-            # for result in results_26:
-            #     results_26 = result[0]  # Mengambil nilai pertama dari row
-
             word_26 = ""
             for i in results_26:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -411,9 +321,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_27 = "SELECT Paper_Level FROM cwp27 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_27)
             results_27 = cursor.fetchall()
-            # for result in results_27:
-            #     results_27 = result[0]  # Mengambil nilai pertama dari row
-
             word_27 = ""
             for row in results_27:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -425,9 +332,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_28 = "SELECT Paper_Level FROM cwp28 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_28)
             results_28 = cursor.fetchall()
-            # for result in results_28:
-            #     results_28 = result[0]  # Mengambil nilai pertama dari row
-
             word_28 = ""
             for i in results_28:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -438,9 +342,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_29 = "SELECT Paper_Level FROM cwp29 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_29)
             results_29 = cursor.fetchall()
-            # for result in results_29:
-            #     results_29 = result[0]  # Mengambil nilai pertama dari row
-
             word_29 = ""
             for i in results_29:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -450,9 +351,6 @@ class SecondWindow(Screen,BoxLayout):
             sql_30 = "SELECT Paper_Level FROM cwp30 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_30)
             results_30 = cursor.fetchall()
-            # for result in results_30:
-            #     results_30 = result[0]  # Mengambil nilai pertama dari row
-
             word_30 = ""
             for row in results_30:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -462,21 +360,6 @@ class SecondWindow(Screen,BoxLayout):
 
             db.commit()
 
-        # db = mysql.connector.connect(host=host, user=user, password=password, database=database)
-        # cursor=db.cursor()
-        # sql = "SELECT * FROM cwp1 ORDER BY Timestamp DESC LIMIT 1;"
-
-        # try:
-        #     cursor.execute(sql)
-        #     word=''
-        #     # Fetch all the rows in a list of lists.
-        #     results = cursor.fetchall()
-        #     for i in results:
-        #         word = f'{word}\n{i}' #n{i[0]} to select the first column
-        #         self.ids.hasil245.text= word
-        #     #print (results)
-        #     db.commit()               
-            #print(results)
         except:
             print ("Error! Unable to fetch data" )  
         
@@ -496,17 +379,9 @@ class ThirdWindow(Screen):
         cursor = db.cursor()
 
         try:
-            # ========================================================================================================
-            # ==================================================SQL 30-40 ======================================================
-            # ========================================================================================================
-            # Query untuk tabel cwp30
-
             sql_30 = "SELECT Paper_Level FROM cwp30 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_30)
             results_30 = cursor.fetchall()
-            # for result in results_30:
-            #     results_30 = result[0]  # Mengambil nilai pertama dari row
-
             word_30 = ""
             for row in results_30:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -517,9 +392,6 @@ class ThirdWindow(Screen):
             sql_31 = "SELECT Paper_Level FROM cwp31 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_31)
             results_31 = cursor.fetchall()
-            # for result in results_31:
-            #     results_31 = result[0]  # Mengambil nilai pertama dari row
-
             word_31 = ""
             for row in results_31:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -530,9 +402,6 @@ class ThirdWindow(Screen):
             sql_32 = "SELECT Paper_Level FROM cwp32 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_32)
             results_32 = cursor.fetchall()
-            # for result in results_32:
-            #     results_32 = result[0]  # Mengambil nilai pertama dari row
-
             word_32 = ""
             for row in results_32:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -543,9 +412,6 @@ class ThirdWindow(Screen):
             sql_33 = "SELECT Paper_Level FROM cwp33 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_33)
             results_33 = cursor.fetchall()
-            # for result in results_33:
-            #     results_33 = result[0]  # Mengambil nilai pertama dari row
-
             word_33 = ""
             for row in results_33:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -556,9 +422,6 @@ class ThirdWindow(Screen):
             sql_34 = "SELECT Paper_Level FROM cwp34 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_34)
             results_34 = cursor.fetchall()
-            # for result in results_34:
-            #     results_34 = result[0]  # Mengambil nilai pertama dari row
-
             word_34 = ""
             for row in results_34:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -569,9 +432,6 @@ class ThirdWindow(Screen):
             sql_35 = "SELECT Paper_Level FROM cwp35 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_35)
             results_35 = cursor.fetchall()
-            # for result in results_35:
-            #     results_35 = result[0]  # Mengambil nilai pertama dari row
-
             word_35 = ""
             for row in results_35:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -582,9 +442,6 @@ class ThirdWindow(Screen):
             sql_36 = "SELECT Paper_Level FROM cwp36 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_36)
             results_36 = cursor.fetchall()
-            # for result in results_36:
-            #     results_36 = result[0]  # Mengambil nilai pertama dari row
-
             word_36 = ""
             for row in results_36:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -595,8 +452,6 @@ class ThirdWindow(Screen):
             sql_37 = "SELECT Paper_Level FROM cwp37 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_37)
             results_37 = cursor.fetchall()
-            # for result in results_37:
-            #     results_37 = result[0]  # Mengambil nilai pertama dari row
 
             word_37 = ""
             for row in results_37:
@@ -608,8 +463,6 @@ class ThirdWindow(Screen):
             sql_38 = "SELECT Paper_Level FROM cwp38 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_38)
             results_38 = cursor.fetchall()
-            # for result in results_38:
-            #     results_38 = result[0]  # Mengambil nilai pertama dari row
 
             word_38 = ""
             for row in results_38:
@@ -621,8 +474,6 @@ class ThirdWindow(Screen):
             sql_39 = "SELECT Paper_Level FROM cwp39 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_39)
             results_39 = cursor.fetchall()
-            # for result in results_39:
-            #     results_39 = result[0]  # Mengambil nilai pertama dari row
 
             word_39 = ""
             for row in results_39:
@@ -634,9 +485,6 @@ class ThirdWindow(Screen):
             sql_40 = "SELECT Paper_Level FROM cwp40 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_40)
             results_40 = cursor.fetchall()
-            # for result in results_40:
-            #     results_40 = result[0]  # Mengambil nilai pertama dari row
-
             word_40 = ""
             for row in results_40:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -644,16 +492,10 @@ class ThirdWindow(Screen):
             self.ids.hasil40.text = word_40
 
 
-            # ========================================================================================================
-            # ==================================================SQL 41-44 ======================================================
-            # ========================================================================================================
-            # Query untuk tabel cwp46
+
             sql_41 = "SELECT Paper_Level FROM cwp41 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_41)
             results_41 = cursor.fetchall()
-            # for result in results_41:
-            #     results_41 = result[0]  # Mengambil nilai pertama dari row
-
             word_41 = ""
             for i in results_41:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -664,8 +506,6 @@ class ThirdWindow(Screen):
             sql_42 = "SELECT Paper_Level FROM cwp42 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_42)
             results_42 = cursor.fetchall()
-            # for result in results_42:
-            #     results_42 = result[0]  # Mengambil nilai pertama dari row
 
             word_42 = ""
             for i in results_42:
@@ -676,8 +516,6 @@ class ThirdWindow(Screen):
             sql_43 = "SELECT Paper_Level FROM cwp43 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_43)
             results_43 = cursor.fetchall()
-            # for result in results_43:
-            #     results_43 = result[0]  # Mengambil nilai pertama dari row
 
             word_43 = ""
             for i in results_43:
@@ -685,12 +523,10 @@ class ThirdWindow(Screen):
                 word_43 = f"{word_43}\n{paper_level}"
             self.ids.hasil43.text = word_43
 
-            # Query untuk tabel cwp47
             sql_44 = "SELECT Paper_Level FROM cwp44 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_44)
             results_44 = cursor.fetchall()
-            # for result in results_44:
-            #     results_44 = result[0]  # Mengambil nilai pertama dari row
+
 
             word_44 = ""
             for i in results_44:
@@ -700,21 +536,7 @@ class ThirdWindow(Screen):
 
             db.commit()
 
-        # db = mysql.connector.connect(host=host, user=user, password=password, database=database)
-        # cursor=db.cursor()
-        # sql = "SELECT * FROM cwp45 ORDER BY Timestamp DESC LIMIT 1;"
 
-        # try:
-        #     cursor.execute(sql)
-        #     word=''
-        #     # Fetch all the rows in a list of lists.
-        #     results = cursor.fetchall()
-        #     for i in results:
-        #         word = f'{word}\n{i}' #n{i[0]} to select the first column
-        #         self.ids.hasil45.text= word
-        #     #print (results)
-        #     db.commit()               
-            #print(results)
         except:
             print ("Error! Unable to fetch data" )  
         
@@ -736,16 +558,10 @@ class FourWindow(Screen):
         cursor = db.cursor()
 
         try:
-            # ========================================================================================================
-            # ==================================================SQL 45-47 ======================================================
-            # ========================================================================================================
-            # Query untuk tabel cwp45
+
             sql_45 = "SELECT Paper_Level FROM cwp45 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_45)
             results_45 = cursor.fetchall()
-            # for result in results_45:
-            #     results_45 = result[0]  # Mengambil nilai pertama dari row
-
             word_45 = ""
             for row in results_45:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -757,9 +573,6 @@ class FourWindow(Screen):
             sql_46 = "SELECT Paper_Level FROM cwp46 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_46)
             results_46 = cursor.fetchall()
-            # for result in results_46:
-            #     results_46 = result[0]  # Mengambil nilai pertama dari row
-
             word_46 = ""
             for i in results_46:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -770,9 +583,6 @@ class FourWindow(Screen):
             sql_47 = "SELECT Paper_Level FROM cwp47 ORDER BY Timestamp DESC LIMIT 1;"
             cursor.execute(sql_47)
             results_47 = cursor.fetchall()
-            # for result in results_47:
-            #     results_47 = result[0]  # Mengambil nilai pertama dari row
-
             word_47 = ""
             for i in results_47:
                 paper_level = row[0]  # Mengambil nilai kolom "Paper_Level"
@@ -781,58 +591,15 @@ class FourWindow(Screen):
 
             db.commit()
 
-        # db = mysql.connector.connect(host=host, user=user, password=password, database=database)
-        # cursor=db.cursor()
-        # sql = "SELECT * FROM cwp45 ORDER BY Timestamp DESC LIMIT 1;"
-
-        # try:
-        #     cursor.execute(sql)
-        #     word=''
-        #     # Fetch all the rows in a list of lists.
-        #     results = cursor.fetchall()
-        #     for i in results:
-        #         word = f'{word}\n{i}' #n{i[0]} to select the first column
-        #         self.ids.hasil45.text= word
-        #     #print (results)
-        #     db.commit()               
-            #print(results)
         except:
             print ("Error! Unable to fetch data" )  
         
         return
-    
-    # def ulang(self,arg):
-    #     global db,data,hasil
-
-    #     db = mysql.connector.connect(host=host, user=user, password=password, database=database)
-    #     cursor=db.cursor()
-    #     sql = "SELECT * FROM cwp45 ORDER BY Timestamp DESC LIMIT 1;"
-
-    #     try:
-    #         cursor.execute(sql)
-    #         word=''
-    #         # Fetch all the rows in a list of lists.
-    #         results = cursor.fetchall()
-    #         for i in results:
-    #             # word = f'{word}\n{i}' #n{i[0]} to select the first column
-    #             self.ids.hasil45.text= word
-                
-    #         #print (results)
-    #         db.commit()               
-    #         #print(results)
-    #     except:
-    #         print ("Error! Unable to fetch data" )  
-        
-    #     return       
-    # def use_btn(self):
-    #     global dd
-    #     dd = Clock.schedule_interval(self.readComm, 1)
-    #     dd = Clock.schedule_interval(self.ulang, 1)
 
 class WindowManager(ScreenManager):
     pass
 
-kv = Builder.load_file("ujicoba.kv")
+kv = Builder.load_file("imsql_gui.kv")
     
 class MyMainApp(App):
     title = "IMSql"
